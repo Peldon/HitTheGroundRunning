@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Patterns">
       <UniqueIdentifier>{a3f6b23c-5a7e-442c-b88d-8fe11289660b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Basics">
+      <UniqueIdentifier>{ac29c6dc-9063-41c7-91f5-191f8249a3ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +42,12 @@
     <ClCompile Include="Example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pointer.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="RValueReference.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Set.h">
@@ -51,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Example.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RValueReference.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

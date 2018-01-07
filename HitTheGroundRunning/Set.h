@@ -1,6 +1,8 @@
+#include "Example.h"
+
 #pragma once
-class Set {
+class Set : public Example {
 public:
-    int RunExample();
+    int RunExample() override;
 };
 

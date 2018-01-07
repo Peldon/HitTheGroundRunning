@@ -1,7 +1,7 @@
 #pragma once
 #include "Example.h"
 
-class Adapter : Example {
+class Adapter : public Example {
 public:
     int RunExample() override;
 };

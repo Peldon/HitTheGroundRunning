@@ -1,7 +1,7 @@
 #pragma once
 #include "Example.h"
-
-class Builder : public Example {
+class RValueReference :
+    public Example {
 public:
     int RunExample() override;
 };
