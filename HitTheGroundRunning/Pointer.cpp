@@ -29,6 +29,19 @@ void Pointer::changePointer(int * intptr) {
     cout << "inside after: " << intptr << endl;
 
 }
+void Pointer::changePointerRef(int *& intptr) {
+    int i = 5;
+    cout << "inside before: " << intptr << endl;
+    intptr = &i;
+    cout << "inside after: " << intptr << endl;
+    cout << "inside value after: " << *intptr << endl;
+}
+void Pointer::changePointerValue(int * intptr) {
+    cout << "inside value before: " << *intptr << endl;
+    int i = 5;
+    *intptr = i; // value is copied
+    cout << "inside value after: " << *intptr << endl;
+}
 
 int Pointer::RunExample() {
     std::cout << "### Pointer Example:" << std::endl;
@@ -81,11 +94,24 @@ int Pointer::RunExample() {
     // *iptr3 = 9;   // error: assignment of read-only variable
     // iptr3 = &i2;  // error: assignment of read-only variable
 
-
-    cout << "before: " << pNumber << endl;
+    cout << "changePointer before: *pNumber=" << *pNumber << endl;
+    cout << "changePointer before: pNumber=" << pNumber << endl;
     changePointer(pNumber);
-    cout << "after: " << pNumber << endl;
-    // of course this changes the pointer content only inside the function, because the pointer itself is passed as value and does not change the pointer outside
+    cout << "changePointer after: pNumber=" << pNumber << endl;
+    // of course this changed the pointer content only inside the function, because the pointer itself is passed as value and does not change the pointer outside
+    changePointerRef(pNumber);
+    cout << "changePointerRef after: pNumber=" << pNumber << endl;
+    cout << "changePointerRef after: *pNumber=" << *pNumber << endl;
+    // this changed the pointer, but because we assigned an address to a stack variable, the value is lost after the method completes!
+
+    // lets first repair the broken pointer before continuing
+    pNumber = &number;
+    changePointerValue(pNumber);
+    cout << "changePointerValue after: pNumber=" << pNumber << endl;
+    cout << "changePointerValue after: *pNumber=" << *pNumber << endl;
+    cout << "changePointerValue after: number=" << number << endl;
+    
+    
 
     return 0;
 }
